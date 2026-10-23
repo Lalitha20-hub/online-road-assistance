@@ -16,7 +16,12 @@ const reviewRoutes = require('./routes/reviewRoutes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://online-road-assistance-8.onrender.com'
+  ]
+}));
 app.use(express.json());
 
 app.get('/api/test', (req, res) => {
